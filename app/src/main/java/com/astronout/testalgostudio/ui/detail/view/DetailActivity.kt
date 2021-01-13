@@ -258,8 +258,10 @@ class DetailActivity : BaseActivity() {
         var newBitmap: Bitmap? = null
 
         try {
+            val imagePath = Uri.parse(path)
+            val imageFile = (File(imagePath.path!!))
             bitmap =
-                BitmapFactory.decodeStream(contentResolver.openInputStream(getUriFromFile()))
+                BitmapFactory.decodeStream(contentResolver.openInputStream(Uri.fromFile(imageFile)))
 
             var config: Bitmap.Config? = bitmap!!.config
             if (config == null) {
