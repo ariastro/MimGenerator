@@ -99,33 +99,14 @@ dependencies {
     implementation "com.intuit.ssp:ssp-android:$sspVersion"
     implementation "com.intuit.sdp:sdp-android:$sdpVersion"
 
-    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
-
-    // Material search bar
-    implementation "com.github.mancj:MaterialSearchBar:$materialSearchBarVersion"
-
     // Bottom Sheet
     implementation "com.github.andrefrsousa:SuperBottomSheet:$bottomSheetVersion"
 
     implementation "com.android.support:multidex:$multidexVersion"
 
-    implementation "com.github.chrisbanes:PhotoView:$photoViewVersion"
-
     // Material dialog
     implementation "com.afollestad.material-dialogs:core:$materialDialogVersion"
     implementation "com.afollestad.material-dialogs:datetime:$materialDialogVersion"
-
-    // Local Database
-    implementation "androidx.room:room-runtime:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
-    // For Kotlin use kapt instead of annotationProcessor
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:$roomVersion"
-    // Test helpers
-    testImplementation "androidx.room:room-testing:$roomVersion"
-
-    // shared preferences
-    implementation "com.chibatching.kotpref:kotpref:$kotprefVersion"
 
     // glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -135,12 +116,6 @@ dependencies {
     // circle imageview
     implementation "de.hdodenhof:circleimageview:$circleimageviewVersion"
 
-    // material
-    implementation "com.google.android.material:material:$materialVersion"
-
-    // joda time
-    implementation "net.danlew:android.joda:$jodaTimeVersion"
-
     // toasty
     implementation "com.github.GrenderG:Toasty:$toastyVersion"
 
@@ -149,9 +124,6 @@ dependencies {
     // timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
-    // work manager
-    implementation "android.arch.work:work-runtime:$workManagerVersion"
-
     // dexter
     implementation "com.karumi:dexter:$dexterVersion"
 
@@ -159,12 +131,9 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$koinVersion"
     implementation "org.koin:koin-android:$koinVersion"
 
-    // material spinner
-    implementation "com.jaredrummler:material-spinner:$materialSpinnerVersion"
-
     // image picker
     implementation "com.github.dhaval2404:imagepicker:$imagePickerVersion"
 
-    implementation 'com.facebook.android:facebook-share:[5,6)'
+    implementation 'com.facebook.android:facebook-share:5.15.3'
 
 }

@@ -124,10 +124,7 @@ class DetailActivity : BaseActivity() {
                 mDialogView.text.text.toString().isEmpty() -> getString(R.string.empty_field)
                 else -> {
                     addedText = mDialogView.text.text.toString()
-                    val imagePath = Uri.parse(path)
-                    val imageFile = (File(imagePath.path!!))
-                    val uri = Uri.fromFile(imageFile)
-                    uri.let {
+                    getUriFromFile().let {
                         val processedBitmap = processingBitmap()
                         imageBitmap = processedBitmap
                         if (processedBitmap != null) {
@@ -143,6 +140,12 @@ class DetailActivity : BaseActivity() {
         mDialogView.btn_dialog_batal.setOnClickListener {
             mAlertDialog.dismiss()
         }
+    }
+
+    private fun getUriFromFile(): Uri {
+        val imagePath = Uri.parse(path)
+        val imageFile = (File(imagePath.path!!))
+        return Uri.fromFile(imageFile)
     }
 
     @Suppress("DEPRECATION")
@@ -255,10 +258,8 @@ class DetailActivity : BaseActivity() {
         var newBitmap: Bitmap? = null
 
         try {
-            val imagePath = Uri.parse(path)
-            val imageFile = (File(imagePath.path!!))
             bitmap =
-                BitmapFactory.decodeStream(contentResolver.openInputStream(Uri.fromFile(imageFile)))
+                BitmapFactory.decodeStream(contentResolver.openInputStream(getUriFromFile()))
 
             var config: Bitmap.Config? = bitmap!!.config
             if (config == null) {
