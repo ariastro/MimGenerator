@@ -5,16 +5,19 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
+import android.os.Environment
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.datetime.datePicker
 import com.astronout.testalgostudio.BuildConfig
+import com.github.dhaval2404.imagepicker.ImagePicker
 import es.dmoral.toasty.Toasty
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 import timber.log.Timber
+import java.io.File
 import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -83,6 +86,12 @@ fun Context.showInfoToasty(message: String) {
 
 fun Context.showWarningToasty(message: String) {
     Toasty.warning(this, message, Toast.LENGTH_SHORT, true).show()
+}
+
+fun Activity.imagePickerGallery(requestCode: Int) {
+    ImagePicker.with(this)
+        .galleryOnly()
+        .start(requestCode)
 }
 
 fun Activity.checkPermissionForLocation(context: Context, REQUEST_PERMISSION_LOCATION : Int): Boolean {

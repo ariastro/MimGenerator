@@ -114,10 +114,6 @@ dependencies {
     implementation "com.afollestad.material-dialogs:core:$materialDialogVersion"
     implementation "com.afollestad.material-dialogs:datetime:$materialDialogVersion"
 
-    // this dependency is not required if you are already using your own
-    // slf4j implementation
-    implementation "org.slf4j:slf4j-nop:$slf4jVersion"
-
     // Local Database
     implementation "androidx.room:room-runtime:$roomVersion"
     kapt "androidx.room:room-compiler:$roomVersion"
@@ -130,10 +126,12 @@ dependencies {
     // shared preferences
     implementation "com.chibatching.kotpref:kotpref:$kotprefVersion"
 
-    // image processing
+    // glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // circle imageview
     implementation "de.hdodenhof:circleimageview:$circleimageviewVersion"
 
     // material
@@ -147,44 +145,11 @@ dependencies {
 
     implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
 
-    // image with badge
-    implementation "com.github.nikartm:image-support:$imageSupportVersion"
-
-    // carouselView
-    implementation "com.github.jama5262:CarouselView:$carouselViewVersion"
-
-    // calendarview
-    implementation "com.github.prolificinteractive:material-calendarview:$calendarViewVersion"
-
-    implementation "com.toptoche.searchablespinner:searchablespinnerlibrary:$searchableSpinnerVersion"
-
-    implementation 'com.google.zxing:core:3.2.1'
-    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
-
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:26.0.0')
-
-    // Add the dependency for the Firebase SDK for Google Analytics
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.firebase:firebase-messaging'
-
-    // pinView
-    implementation "com.chaos.view:pinview:$pinViewVersion"
-
-    implementation "androidx.browser:browser:$browserVersion"
-
     // timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
     // work manager
     implementation "android.arch.work:work-runtime:$workManagerVersion"
-
-    //  lightweight general solution
-    implementation "com.github.yalantis:ucrop:$uCropVersion"
-    // get power of the native code to preserve image quality (+ about 1.5 MB to an apk size)
-//    implementation 'com.github.yalantis:ucrop:2.2.6-native'
 
     // dexter
     implementation "com.karumi:dexter:$dexterVersion"
@@ -195,5 +160,8 @@ dependencies {
 
     // material spinner
     implementation "com.jaredrummler:material-spinner:$materialSpinnerVersion"
+
+    // image picker
+    implementation "com.github.dhaval2404:imagepicker:$imagePickerVersion"
 
 }

@@ -1,3 +1,7 @@
 <resources>
-	<string name="app_name">MimGenerator</string>
+    <string name="app_name">MimGenerator</string>
+    <string name="add_logo">Add Logo</string>
+    <string name="add_text">Add Text</string>
+    <string name="simpan">Simpan</string>
+    <string name="share">Share</string>
 </resources>

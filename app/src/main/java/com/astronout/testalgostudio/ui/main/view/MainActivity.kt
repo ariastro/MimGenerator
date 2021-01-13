@@ -1,11 +1,14 @@
 package com.astronout.testalgostudio.ui.main.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.astronout.testalgostudio.R
 import com.astronout.testalgostudio.base.BaseActivity
 import com.astronout.testalgostudio.databinding.ActivityMainBinding
+import com.astronout.testalgostudio.ui.detail.view.DetailActivity
+import com.astronout.testalgostudio.ui.detail.view.DetailActivity.Companion.EXTRA_MEME
 import com.astronout.testalgostudio.ui.main.adapter.MainAdapter
 import com.astronout.testalgostudio.ui.main.viewmodel.MainViewModel
 import com.astronout.testalgostudio.utils.showErrorToasty
@@ -40,7 +43,9 @@ class MainActivity : BaseActivity() {
                 Status.SUCCESS -> {
                     if (progress.isShowing) progress.dismiss()
                     adapter = MainAdapter(MainAdapter.OnClickListener { meme ->
-
+                        val intent = Intent(this, DetailActivity::class.java)
+                        intent.putExtra(EXTRA_MEME, meme)
+                        startActivity(intent)
                     })
                     adapter.submitList(it.data?.data?.memes)
                     adapter.notifyDataSetChanged()

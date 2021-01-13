@@ -19,7 +19,7 @@ buildscript {
         circleimageviewVersion = "3.0.1"
         sentryVersion = "1.7.27"
         slf4jVersion = "1.7.25"
-        imagePickerVersion = "2.3.0"
+        imagePickerVersion = "1.8"
         compressorVersion = "3.0.0"
         photoViewVersion = "2.3.0"
         jodaTimeVersion = "2.10.7.2"
