@@ -218,7 +218,7 @@ class DetailActivity : BaseActivity() {
                     PackageManager.PERMISSION_GRANTED
                 ) {
                     //permission from popup granted
-                    saveImage(imageBitmap!!, this)
+                    path = saveImage(imageBitmap!!, this)
                 } else {
                     //permission from popup denied
                     showToast(getString(R.string.permission_gallery_denied))
@@ -238,12 +238,10 @@ class DetailActivity : BaseActivity() {
 
     fun shareTwitter(path: String) {
         try {
-            val imagePath = Uri.parse(path)
-            val imageFile = (File(imagePath.path!!))
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "/*"
             intent.setClassName("com.twitter.android", "com.twitter.android.PostActivity")
-            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(imageFile))
+            intent.putExtra(Intent.EXTRA_STREAM, getUriFromFile())
             startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             showWarningToasty(getString(R.string.no_twitter_app))
