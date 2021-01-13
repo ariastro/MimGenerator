@@ -4,4 +4,13 @@
     <string name="add_text">Add Text</string>
     <string name="simpan">Simpan</string>
     <string name="share">Share</string>
+    <string name="share_to_fb">Share to FB</string>
+    <string name="share_to_twitter">Share to Twitter</string>
+    <string name="image_not_saved_yet">Simpan gambar terlebih dahulu!</string>
+    <string name="save_image_success">Gambar berhasil tersimpan di %s</string>
+    <string name="cancel">Cancel</string>
+    <string name="text">Text</string>
+    <string name="empty_field">Inputan tidak boleh kosong!</string>
+    <string name="processing_failed">Something wrong in processing!</string>
+    <string name="no_twitter_app">You don\'t seem to have twitter installed on this device!</string>
 </resources>

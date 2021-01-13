@@ -22,4 +22,6 @@ object Constants {
 
     const val NO_INTERNET_CONNECTION = "Gagal Terkoneksi dengan Server!"
 
+    const val FOLDER_NAME = "MimGenerator"
+
 }
